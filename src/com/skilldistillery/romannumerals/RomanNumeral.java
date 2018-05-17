@@ -23,37 +23,30 @@ public class RomanNumeral {
 
 	private void run() {
 
-		numerals.put(1, "I");
-		numerals.put(4, "IV");
-		numerals.put(5, "V");
-		numerals.put(9, "IX");
-		numerals.put(10, "X");
-		numerals.put(40, "XL");
-		numerals.put(50, "L");
-		numerals.put(90, "XC");
-		numerals.put(100, "C");
-		numerals.put(400, "CD");
-		numerals.put(500, "D");
-		numerals.put(900, "CM");
-		numerals.put(1000, "M");
-		numerals.put(4000, "IV_");
-		numerals.put(5000, "V_");
-		numerals.put(9000, "IX_");
-		numerals.put(10000, "X̅");
-		numerals.put(40000, "XL_");
-		numerals.put(50000, "L_");
-		numerals.put(90000, "XC_");
-		numerals.put(100000, "C_");
-		numerals.put(400000, "CD_");
-		numerals.put(500000, "D_");
-		numerals.put(900000, "CM_");
+		numerals.put(1, "I"); numerals.put(4, "IV"); numerals.put(5, "V"); numerals.put(9, "IX");
+		numerals.put(10, "X"); numerals.put(40, "XL"); numerals.put(50, "L"); numerals.put(90, "XC");
+		numerals.put(100, "C"); numerals.put(400, "CD"); numerals.put(500, "D"); numerals.put(900, "CM");
+		numerals.put(1000, "M"); numerals.put(4000, "IV_"); numerals.put(5000, "V_"); numerals.put(9000, "IX_");
+		numerals.put(10000, "X̅"); numerals.put(40000, "XL_"); numerals.put(50000, "L_"); numerals.put(90000, "XC_");
+		numerals.put(100000, "C_"); numerals.put(400000, "CD_"); numerals.put(500000, "D_"); numerals.put(900000, "CM_");
 		numerals.put(1000000, "M_");
 
 		getKeys();
-
-		System.out.print("Please enter a number between 1 and 1_000_000: ");
-		int num = kb.nextInt();
-		convertNumeral(num, "");
+		
+		boolean status = true;
+		
+		while (status) {
+			System.out.print("Please enter a number between 1 and 1_000_000: ");
+			int num = kb.nextInt();
+			convertNumeral(num, "");
+			System.out.print("Would you like to convert another number? (Y or N): ");
+			String answer = kb.next();
+			if (answer.toUpperCase().equals("N")) {
+				System.out.println("Goodbye");
+				status = false;
+			}
+		}
+		
 	}
 
 	private void getKeys() {
